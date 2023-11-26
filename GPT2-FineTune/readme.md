@@ -136,13 +136,15 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 
 print(generated_text)
 ```
+
+...
+Generated text:
+
 On Sept. 24, 2021, 18-year-old Joshua Bennett of Etobicoke was stabbed in the Paulander Drive area in Kitchener around 4:30 a.m.
 
 Sgt. Paul Morris of Eglinton Police would not divulge that night, due largely the information that's publicly out this summer's tragic stabbing mystery series, so there just couldn or shouldn't even go that much further
 
 According to an EGS report made Wednesday, 27 days after its release
-
-...
 
 
 
