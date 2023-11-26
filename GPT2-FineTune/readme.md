@@ -2,4 +2,90 @@
 Built a generatinve model to generate text related to william shakespeare writing style.
 The dataset consists of plays,literature,and poems he wrote.
 
-I fine-tuned GPT2 SMALL Model with LoRA PEFT on the dataset.
+Certainly! Below is an example README file for your project:
+
+---
+
+
+This project involves the fine-tuning of a GPT-2 language model using the Hugging Face Transformers library. The primary goal is to leverage the power of GPT-2 for a specific task using a provided dataset. Additionally, the project incorporates Lora (Local Re-Attention) to enhance attention mechanisms.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Setup](#setup)
+  - [Package Installation](#package-installation)
+  - [Reading Data](#reading-data)
+  - [Downloading GPT-2 Weights and Tokenizer](#downloading-gpt-2-weights-and-tokenizer)
+  - [Lora Configuration](#lora-configuration)
+- [Data Preparation](#data-preparation)
+  - [Splitting Data](#splitting-data)
+  - [Tokenizing Data](#tokenizing-data)
+- [GPT-2 Fine-Tuning](#gpt-2-fine-tuning)
+  - [Training Setup](#training-setup)
+  - [Custom Collation Function](#custom-collation-function)
+  - [Training Process](#training-process)
+- [Evaluation](#evaluation)
+- [Notes](#notes)
+
+## Introduction
+
+This project aims to fine-tune the GPT-2 language model for a specific task using a provided dataset. The fine-tuning process involves loading a pre-trained GPT-2 model, configuring Lora local re-attention for enhanced performance, and training the model on the dataset.
+
+## Setup
+
+### Package Installation
+
+Ensure the required Python packages are installed by running the following commands:
+
+```bash
+!pip install -q bitsandbytes datasets accelerate loralib
+!pip install -q git+https://github.com/huggingface/transformers.git@main git+https://github.com/huggingface/peft.git
+!pip install accelerate -U
+!pip install transformers==4.33.2 datasets torch
+```
+
+### Reading Data
+
+Mount Google Drive to access project files and set the base directory:
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+base_dir = "/content/drive/MyDrive/GPT2-finetune"
+```
+
+...
+
+[Continue with the rest of the setup]
+
+## Data Preparation
+
+### Splitting Data
+
+The dataset is loaded and split into training and validation subsets. The subsets are then saved to separate files.
+
+### Tokenizing Data
+
+The GPT-2 tokenizer is applied to tokenize the text data, and the tokenized datasets are saved to disk for future use.
+
+## GPT-2 Fine-Tuning
+
+### Training Setup
+
+Training arguments are set up using the `TrainingArguments` class from the `transformers` library.
+
+### Custom Collation Function
+
+A custom collation function is defined to handle the batching of data during training.
+
+### Training Process
+
+The model is trained using the `Trainer` class, which includes the model, training arguments, datasets, and the custom data collator.
+
+## Evaluation
+
+After training, the model is evaluated using the validation dataset, and the evaluation results are stored.
+
+
+
+
