@@ -88,7 +88,19 @@ After training, the model is evaluated using the validation dataset, and the eva
 
 
 
+### Loading Model from Hugging Face
 
+Install the `transformers` library and load the GPT-2 model from Hugging Face:
+
+```python
+!pip install transformers
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+# Specify the model name or path
+model_name_or_path = "Ahmedhany216/your-GPT2-FineTune"
+
+# Load the tokenizer
+tokenizer = GPT2Tokenizer.from_pretrained(model_name_or_path)
 
 # Load the model
 model = GPT2LMHeadModel.from_pretrained(model_name_or_path)
@@ -125,10 +137,17 @@ generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
 print(generated_text)
 ```
 
-...
-
-[Continue with the rest of the README]
-
-## Notes
 
 ...
+
+
+
+
+
+
+
+
+
+
+
+
