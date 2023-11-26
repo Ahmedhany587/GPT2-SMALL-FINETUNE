@@ -2,7 +2,6 @@
 Built a generatinve model to generate text related to william shakespeare writing style.
 The dataset consists of plays,literature,and poems he wrote.
 
-Certainly! Below is an example README file for your project:
 
 ---
 
@@ -89,3 +88,47 @@ After training, the model is evaluated using the validation dataset, and the eva
 
 
 
+
+
+# Load the model
+model = GPT2LMHeadModel.from_pretrained(model_name_or_path)
+```
+
+...
+
+## Generating Text
+
+Generate text using the fine-tuned GPT-2 model:
+
+```python
+# Generate some text
+input_text = "On Sept. 24, 2021, 18-year-old Joshua Bennett of Etobicoke was stabbed in the Paulander Drive area in Kitchener around 4:30 a.m."
+
+input_ids = tokenizer.encode(input_text, return_tensors="pt")
+
+# Create an attention mask
+attention_mask = torch.ones(input_ids.shape, dtype=torch.long)
+
+output = model.generate(input_ids,
+                        max_length=100,
+                        min_length=70,
+                        do_sample=True,
+                        attention_mask=attention_mask,
+                        pad_token_id=tokenizer.eos_token_id,
+                        temperature=2.0,
+                        #top_p=0.95,
+                        #top_k=50
+                        )
+
+generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+
+print(generated_text)
+```
+
+...
+
+[Continue with the rest of the README]
+
+## Notes
+
+...
