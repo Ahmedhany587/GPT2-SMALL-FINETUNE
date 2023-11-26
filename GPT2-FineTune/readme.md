@@ -6,7 +6,7 @@ The dataset consists of plays,literature,and poems he wrote.
 ---
 
 
-This project involves the fine-tuning of a GPT-2 language model using the Hugging Face Transformers library. The primary goal is to leverage the power of GPT-2 for a specific task using a provided dataset. Additionally, the project incorporates Lora (Local Re-Attention) to enhance attention mechanisms.
+This project involves the fine-tuning of a GPT-2 language model using the Hugging Face Transformers library. The primary goal is to leverage the power of GPT-2 for a specific task using a provided dataset. Additionally, the project incorporates Peft with loRa for which hepled to train only 20% of the model parameters .
 
 ## Table of Contents
 
